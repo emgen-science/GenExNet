@@ -18,7 +18,7 @@ def create_project():
             print("We couldn't find that CSV file, please check your path.")
     cwd = os.getcwd()
     os.makedirs(cwd + "/" + project_name, exist_ok=True)
-    os.chdir(cwd + "/" + project_name)``
+    os.chdir(cwd + "/" + project_name)
     dbi.build_database(csv_path, project_name)
     open_project_transducer(project_name)
 
@@ -51,8 +51,7 @@ def open_project_transducer(project_name):
     print("Options for " + project_name)
     print("(C)luster - Cluster data using scikit.\n")
     print("(P)revious - review the results of a past clustering.")
-    print("(H)uge cluster - Cluster using our database backend and inhouse algorithm for large datasets.")
-    print("(G)raph - Generate graphs from clustered data. (Clustering must have already run)")
+    print("(G)raph - Generate graphs from clustered data.")
     print("(R)eport - Generate PDF report with graphs.")
     print("(T)ext - Generate a text only report")
     reply = input("> ")

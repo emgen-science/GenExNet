@@ -46,8 +46,8 @@ def build_database(csv_file, project_name):
                     c.execute('''INSERT INTO data_description VALUES ('%s','%s')''' % (column_headers[m],n))
                 connection.commit()
             else:
-                questions = "'?', "*(len(row)-1)
-                c.execute('''INSERT INTO data VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) ''', tuple(row))
+                question_marks = ','.join('?' * len(row))
+                c.execute('''INSERT INTO data VALUES ({0})'''.format(question_marks), tuple(row))
         connection.commit()
         connection.close()
 
