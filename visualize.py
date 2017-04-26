@@ -42,4 +42,4 @@ def gengraph(G):
     return gr
 
 def exgraph(gr,outpath):
-    pdf.savefig(outpath,format=pdf)
+    pdf.savefig(outpath)
